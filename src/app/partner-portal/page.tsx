@@ -346,7 +346,7 @@ export default function PartnerPortalPage() {
             </div>
             <div className="space-y-3">
               {faqs.map((faq, i) => (
-                <FaqItem key={i} faq={faq} index={i} />
+                <FaqItem key={i} faq={faq} />
               ))}
             </div>
           </div>
