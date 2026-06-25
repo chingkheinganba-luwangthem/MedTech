@@ -66,7 +66,7 @@ function AnimatedStat({ value, suffix, label, delay, icon: Icon }: { value: numb
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay, duration: 0.8 }}
-      className="flex flex-col items-start lg:items-start text-left"
+      className="flex flex-col items-center lg:items-start text-center lg:text-left"
     >
       <div className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center mb-4 bg-dark-bg text-gold/80 hover:text-gold transition-colors">
         <Icon size={18} strokeWidth={1.5} />
@@ -110,7 +110,7 @@ function FloatingJobCard({ title, location, salary, status, delay, className }: 
 
 export function HeroSection() {
   return (
-    <section className="relative h-screen min-h-[750px] max-h-[1080px] pt-24 pb-8 flex items-center overflow-hidden">
+    <section className="relative min-h-[100vh] lg:h-screen lg:min-h-[750px] lg:max-h-[1080px] pt-32 lg:pt-24 pb-20 lg:pb-8 flex items-center overflow-hidden">
       {/* Base Background Layers */}
       <div className="absolute inset-0 bg-dark-bg -z-30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/15 via-dark-bg/80 to-dark-bg -z-20" />
@@ -133,7 +133,7 @@ export function HeroSection() {
         <ParticleCanvas />
       </div>
 
-      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10 w-full h-full flex flex-col justify-center ml-23">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10 w-full h-full flex flex-col justify-center">
         {/* 
             LAYOUT-SYSTEM:
             To move elements manually, adjust the classes below.
@@ -164,20 +164,20 @@ export function HeroSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="flex flex-col lg:w-[45%] z-10 pt-6 xl:pt-20"
+            className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-[45%] z-10 pt-6 xl:pt-20"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-bold leading-[1.1] tracking-tight text-white mb-6 ">
-              The Future of <br />
-              <span className="text-gold block mt-2">Global <br />  Recruitment</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold leading-[1.1] tracking-tight text-white mb-6 ">
+              The Future of <br className="hidden lg:block" />
+              <span className="text-gold block mt-2">Global <br className="hidden lg:block" />  Recruitment</span>
             </h1>
 
-            <p className="text-sm border-l-2 border-gold pl-4 md:text-base text-gray-400 font-sans leading-relaxed tracking-wide mb-8 max-w-md">
+            <p className="text-sm lg:border-l-2 lg:border-t-0 border-t-2 border-gold pt-3 lg:pt-0 lg:pl-4 md:text-base text-gray-400 font-sans leading-relaxed tracking-wide mb-8 max-w-md">
               Transforming career aspirations into remarkable success by connecting talented professionals with outstanding opportunities across global markets.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-10 w-full">
-              <Link href="/refer-earn" className="bg-gold hover:brightness-110 text-dark-bg font-bold rounded-full px-6 py-3 text-[13px] border border-gold transition-all flex items-center justify-between gap-6 min-w-[200px]">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10 w-full">
+              <Link href="/refer-earn" className="bg-gold hover:brightness-110 text-dark-bg font-bold rounded-full px-6 py-3 text-[13px] border border-gold transition-all flex items-center justify-center gap-6 min-w-[200px]">
                 <div className="flex items-center gap-2">
                   <Gift size={16} className="text-dark-bg" />
                   Refer & Earn
@@ -188,15 +188,15 @@ export function HeroSection() {
             </div>
 
             {/* Feature Row */}
-            <div className="flex flex-wrap items-center justify-start gap-4 lg:gap-6 mt-4 opacity-90">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-6 mt-4 opacity-90">
               {[
                 { icon: ShieldCheck, text: "Verified\nEmployers" },
                 { icon: Globe2, text: "Global\nOpportunities" },
                 { icon: Zap, text: "Fast\nHiring Process" }
               ].map((feat, idx) => (
-                <div key={idx} className="flex items-center gap-3 border-l border-white/20 pl-4 lg:pl-6 first:border-0 first:pl-0">
+                <div key={idx} className="flex flex-col lg:flex-row items-center gap-2 lg:gap-3 lg:border-l border-white/20 lg:pl-6 first:lg:border-0 first:lg:pl-0">
                   <feat.icon size={22} strokeWidth={1.5} className="text-gold flex-shrink-0" />
-                  <span className="text-[11px] md:text-xs text-gray-300 font-medium leading-[1.3] whitespace-pre-line">
+                  <span className="text-[11px] md:text-xs text-gray-300 font-medium leading-[1.3] text-center lg:text-left whitespace-pre-line">
                     {feat.text}
                   </span>
                 </div>
@@ -235,12 +235,12 @@ export function HeroSection() {
 
           {/* Right Stats Block */}
           {/* Note: Use pt-XX or mt-XX to shift stats up or down */}
-          <div className="flex flex-col items-start lg:items-end justify-center gap-10 lg:w-[22%] pt-20 lg:pt-0 lg:pr-2 relative">
+          <div className="flex flex-row flex-wrap justify-center lg:flex-col lg:items-end gap-6 lg:gap-10 w-full lg:w-[22%] pt-10 lg:pt-0 lg:pr-2 relative z-10">
 
             <AnimatedStat value={180} suffix="+" label="Successful Placements" delay={0.6} icon={Users} />
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-[-1rem] lg:w-3/4" />
+            <div className="hidden lg:block w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-[-1rem] lg:w-3/4" />
             <AnimatedStat value={90} suffix="%" label="Success Rate" delay={0.8} icon={Target} />
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-[-1rem] lg:w-3/4" />
+            <div className="hidden lg:block w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-[-1rem] lg:w-3/4" />
             <AnimatedStat value={3} suffix="+" label="Years of Industry Experience" delay={1.0} icon={Award} />
           </div>
 
