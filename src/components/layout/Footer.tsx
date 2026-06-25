@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
@@ -13,7 +14,7 @@ export function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="inline-block">
-              <img src="/image/logo1.png" alt="MedTech Logo" className="h-20 w-auto object-contain hover:scale-105 transition-transform" />
+              <Image src="/image/logo1.png" alt="MedTech Logo" width={200} height={80} className="h-20 w-auto object-contain hover:scale-105 transition-transform" />
             </Link>
             <p className="text-gray-400 text-sm max-w-sm">
               End-to-end career placement services helping professionals land their dream jobs globally in IT, Non-IT, and Medical sectors.
@@ -79,7 +80,7 @@ export function Footer() {
             
             {/* E-Verify Logo */}
             <div className="mt-2">
-              <img src="/image/everify.png" alt="E-Verify" className="h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <Image src="/image/everify.png" alt="E-Verify" width={100} height={40} className="h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
             </div>
           </div>
         </div>

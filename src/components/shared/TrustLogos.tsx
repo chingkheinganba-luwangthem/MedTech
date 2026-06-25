@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { siAccenture, siApple, siCisco, siMeta } from "simple-icons";
+import Image from "next/image";
 
 /* ─── Inline SVG brand logos (guaranteed to render, no external deps) ─── */
 
@@ -184,10 +185,12 @@ export function TrustLogos() {
           viewport={{ once: false, amount: 0.1 }}
           className="flex justify-center"
         >
-          <img
+          <Image
             src="/image/logo1.png"
             alt="MedTech Logo"
-            className="h-16 md:h-20 object-contain drop-shadow-2xl hover:scale-105 transition-transform"
+            width={300}
+            height={80}
+            className="h-16 md:h-20 w-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform"
           />
         </motion.div>
       </div>

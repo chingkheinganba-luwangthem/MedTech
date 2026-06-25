@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ParticleCanvas } from "@/components/shared/ParticleCanvas";
+import dynamic from "next/dynamic";
+const ParticleCanvas = dynamic(() => import("@/components/shared/ParticleCanvas").then((mod) => mod.ParticleCanvas), { ssr: false });
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";

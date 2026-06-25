@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { ServicesList } from "@/components/services/ServicesList";
-import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 
+const ProcessTimeline = dynamic(() => import("@/components/home/ProcessTimeline").then((mod) => mod.ProcessTimeline));
 export const metadata: Metadata = {
   title: "Our Services | MedTech Technologies",
   description: "Comprehensive end-to-end career consulting and placement services.",

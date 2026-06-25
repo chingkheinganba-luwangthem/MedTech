@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function AboutHero() {
   return (
@@ -37,9 +38,12 @@ export function AboutHero() {
           <div className="absolute inset-0 bg-gold/20 blur-[100px] rounded-full pointer-events-none -z-10" />
           
           <div className="relative rounded-3xl overflow-hidden border border-gold/30 shadow-[0_0_50px_rgba(200,169,81,0.2)] bg-navy-light/40 backdrop-blur-sm p-2">
-            <img 
+            <Image 
               src="/image/about-hero.png" 
               alt="MedTech Professionals" 
+              width={1200}
+              height={800}
+              priority
               className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover rounded-2xl opacity-90 hover:opacity-100 transition-opacity duration-500"
             />
           </div>
